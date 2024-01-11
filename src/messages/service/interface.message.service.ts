@@ -1,4 +1,4 @@
-interface IMessageService {
+interface IMessagesService {
   findOne(id: string): Promise<JSON>;
 
   findAll(): Promise<JSON>;

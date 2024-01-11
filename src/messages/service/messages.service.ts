@@ -1,7 +1,7 @@
 import { MessageRepository } from '../repository/messages.repository';
 
-export class MessagesService implements IMessageService {
-  repository: MessageRepository;
+export class MessagesService implements IMessagesService {
+  repository: IMessageRepository;
 
   constructor() {
     this.repository = new MessageRepository();

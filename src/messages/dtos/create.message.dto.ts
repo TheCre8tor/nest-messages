@@ -1,4 +1,4 @@
-import { IsString, IsDecimal, IsNumber } from 'class-validator';
+import { IsString } from 'class-validator';
 
 export class CreatemessageDto {
   @IsString()
