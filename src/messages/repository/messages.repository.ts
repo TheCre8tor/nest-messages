@@ -1,6 +1,6 @@
 import { readFile, writeFile } from 'fs/promises';
 
-export class MessageRepository {
+export class MessageRepository implements IMessageRepository {
   storagePath: string = 'src/messages/repository/messages.json';
 
   async findOne(id: string): Promise<JSON> {
