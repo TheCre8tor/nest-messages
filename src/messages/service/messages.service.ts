@@ -1,10 +1,12 @@
+import { Injectable } from '@nestjs/common';
 import { MessageRepository } from '../repository/messages.repository';
 
+@Injectable()
 export class MessagesService implements IMessagesService {
-  repository: IMessageRepository;
+  repository: MessageRepository;
 
-  constructor() {
-    this.repository = new MessageRepository();
+  constructor(repository: MessageRepository) {
+    this.repository = repository;
   }
 
   async findOne(id: string): Promise<JSON> {
@@ -16,6 +18,6 @@ export class MessagesService implements IMessagesService {
   }
 
   async create(content: string) {
-    await this.repository.create(content);
+    this.repository.create(content);
   }
 }

@@ -11,10 +11,10 @@ import { MessagesService } from '../service/messages.service';
 
 @Controller('messages')
 export class MessagesController {
-  service: IMessagesService;
+  service: MessagesService;
 
-  constructor() {
-    this.service = new MessagesService();
+  constructor(service: MessagesService) {
+    this.service = service;
   }
 
   @Get()

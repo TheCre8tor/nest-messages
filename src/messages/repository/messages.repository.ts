@@ -1,5 +1,7 @@
+import { Injectable } from '@nestjs/common';
 import { readFile, writeFile } from 'fs/promises';
 
+@Injectable()
 export class MessageRepository implements IMessageRepository {
   storagePath: string = 'src/messages/repository/messages.json';
 
